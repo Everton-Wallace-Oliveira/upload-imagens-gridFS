@@ -1,0 +1,22 @@
+{
+  "name": "upload-imagens-gridfs",
+  "version": "1.0.0",
+  "description": "API para upload de imagens utilizando gridFS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "gridfs-stream": "^1.1.1",
+    "mongoose": "^8.4.3",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
