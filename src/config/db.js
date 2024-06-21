@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Grid = require('gridfs-stream');
 
 require("dotenv").config();
 
@@ -12,4 +13,13 @@ async function main() {
 
 main().catch((err)=>console.log(err));
 
-module.exports = main;
+let gfs;
+
+const conn = mongoose.connection;
+
+conn.once('open', () => {
+    gfs = Grid(conn.db, mongoose.mongo);
+    gfs.collection('uploads');
+});
+
+module.exports = { main, gfs };
